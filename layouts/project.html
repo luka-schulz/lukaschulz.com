@@ -235,6 +235,11 @@
       margin-right: 1.111rem; /*20px;*/
       background: #FF2400;
       color: #FF2400;
+      transition: .2s ease-in;
+    }
+    
+    .site__title:hover {
+      padding-right: 24px;
     }
 
     .nav {
@@ -255,14 +260,16 @@
 
     }
 
+/*
     .page__content:first-letter {
       color: #FF2400;
       float: left;
       font-size: 300%;
       line-height: 1;
       padding-right: 8px;
-      padding-top: 0.1111rem; /*2px*/
+      padding-top: 0.1111rem; 2px
     }
+*/
 
     .mb {
       margin-bottom: 1.111rem; /*20px;*/
@@ -287,6 +294,12 @@
     .pvl {
       padding-top: 1.111rem; /*20px;*/
       padding-bottom: 1.111rem; /*20px;*/
+    }
+    
+    canvas {
+      background: black;
+      width: 100%;
+      height: 100%;
     }
 
   </style>
@@ -314,21 +327,18 @@
 
       <article class="hentry" itemscope itemtype="http://schema.org/Article">
         <header class="page__header mb">
-          <h1 class="page__title sans" itemprop="name headline">Spoons and Forks</h1>
-          <p class="post__date small"><time itemprop="datePublished" datetime="2017-12-27">Wed. Dec, 27 2017</time></p>
+          <h1 class="page__title sans" itemprop="name headline">The Creation of Adam</h1>
+<!--          <p class="post__type small" itemprop="about">JavaScript, Generative Art</p>-->
         </header>
         <div class="page__content" itemprop="articleBody">
-          <p>What follows is an attempt to empty my mind of the ideas and thoughts that have been coalescing over the past 20 years. In doing so, I hope to bring a level of clarity to my beliefs about creation and the future of design, while also producing a living document that I can share with others.</p>
-          <p>Much of what I believe is driven by a fascination with the creative process and how technology has both helped and hindered humans. This summer, while working for Microsoft, I found myself falling in love at the intersection of bits and atoms. I had come to this crossroad before when applying to the Tangible Media Group as a summer researcher, but it was the possibilities of Augmented Reality (AR) that set my brain afire. By liberating pixels and weaving them into the fabric of reality, I think AR has the possibility of dissolving an ever-growing barrier that has been erected by computers and smartphones, becoming a stepping stone between graphical bits and radical atoms.</p>
-          <p>The Graphical User Interface (GUI) has kept us rapt for almost 50 years, and I think Tea Uglow was right in saying that it is not the interface we are addicted to but rather the stream of data it feeds us1. Just as decreased sugar prices have made it easier to consume more sugar, the barrier to data consumption has exponentially dropped, and we find ourselves designing tools that feed us ever-growing quantities of data. I do not think it was intentional, but the byproduct of this is a society that has been left creatively, emotionally, and intellectually devastated. As a result, it came as a breath of fresh air, when I stumbled upon Matt Jones' blog, Magical Nihilism. It is the home to a decade's worth of curious thoughts and</p>
+          <blockquote><p>“Make your own tools.” <em class="small">—&#xfeff;Bruce&nbsp;Mau</em></p></blockquote>
+          
+          <p>I have never found the act of learning to be difficult. The difficulty has always come from making the content meaningful. While taking Computer Science I &amp; II, I had a hard time imagining how I could apply what I was learning to my design career. It wasn’t until I began exploring p5.js that I realized how I could apply my skills to something more creative. One thing led to another, and I found myself Photoshopping the face of the New Media Program Chair so that it could be used in my coding experiments. The following page highlights the things I have learned from playing around with code. A special thanks is due for Adam Smith for tolerating my antics.</p>
 
-          <blockquote><p>“Here is a blockquote, it might not be nothing, but it's probably something.” <em class="small">—&#xfeff;Chinese&nbsp;proverb</em></p></blockquote>
-
-          <p>The Graphical User Interface (GUI) has kept us rapt for almost 50 years, and I think Tea Uglow was right in saying that it is not the interface we are addicted to but rather the stream of data it feeds us1. Just as decreased sugar prices have made it easier to consume more sugar, the barrier to data<sup id="fnref1"><a href="#fn1" title="Here is a footnote.">1</a></sup> consumption has exponentially dropped, and we find ourselves designing tools that feed us ever-growing quantities of data. I do not think it was intentional, but the byproduct of this is a society that has been left creatively, emotionally, and intellectually devastated. As a result, it came as a breath of fresh air, when I stumbled upon Matt Jones' blog, Magical Nihilism. It is the home to a decade's worth of curious thoughts and</p>
-
+          <h2 class="sans">Audio Visualizer</h2>
           <figure class="small">
             <a href="../images/posters.jpg" title="Image Title" target="_blank">
-              <img src="../images/posters.jpg" style="background: rgb(203, 60, 85);">
+              <canvas id="audioViz"></canvas>
             </a>
             <figcaption>
               <p>This is an example of an image caption.</p>
@@ -336,12 +346,42 @@
           </figure>
 
           <p>What follows is an attempt to empty my mind of the ideas and thoughts that have been coalescing over the past 20 years. In doing so, I hope to bring a level of clarity to my beliefs about creation and the future of design, while also producing a living document that I can share with others.</p>
-          <p>Much of what I believe is driven by a fascination with the creative process and how technology has both helped and hindered humans. This summer, while working for Microsoft, I found myself falling in love at the intersection of bits and atoms. I had come to this crossroad before when applying to the Tangible Media Group as a summer researcher, but it was the possibilities of Augmented Reality (AR) that set my brain afire. By liberating pixels and weaving them into the fabric of reality, I think AR has the possibility of dissolving an ever-growing barrier that has been erected by computers and smartphones, becoming a stepping stone between graphical bits and radical atoms.</p>
-          <h2 class="sans">Man another header</h2>
-          <p>The Graphical User Interface (GUI) has kept us rapt for almost 50 years, and I think Tea Uglow was right in saying that it is not the interface we are addicted to but rather the stream of data it feeds us1. Just as decreased sugar prices have made it easier to consume more sugar, the barrier to data consumption has exponentially dropped, and we find ourselves designing tools that feed us ever-growing quantities of data. I do not think it was intentional, but the byproduct of this is a society that has been left creatively, emotionally, and intellectually devastated. As a result, it came as a breath of fresh air, when I stumbled upon Matt Jones' blog, Magical Nihilism. It is the home to a decade's worth of curious thoughts and</p>
+          
+          <h2 class="sans">Drawn to Life</h2>
+          <figure class="small">
+            <a href="../images/posters.jpg" title="Image Title" target="_blank">
+              <canvas id="audioViz"></canvas>
+            </a>
+            <figcaption>
+              <p>This is an example of an image caption.</p>
+            </figcaption>
+          </figure>
+
           <p>What follows is an attempt to empty my mind of the ideas and thoughts that have been coalescing over the past 20 years. In doing so, I hope to bring a level of clarity to my beliefs about creation and the future of design, while also producing a living document that I can share with others.</p>
-          <p>Much of what I believe is driven by a fascination with the creative process and how technology has both helped and hindered humans. This summer, while working for Microsoft, I found myself falling in love at the intersection of bits and atoms. I had come to this crossroad before when applying to the Tangible Media Group as a summer researcher, but it was the possibilities of Augmented Reality (AR) that set my brain afire. By liberating pixels and weaving them into the fabric of reality, I think AR has the possibility of dissolving an ever-growing barrier that has been erected by computers and smartphones, becoming a stepping stone between graphical bits and radical atoms.</p>
-          <p>The Graphical User Interface (GUI) has kept us rapt for almost 50 years, and I think Tea Uglow was right in saying that it is not the interface we are addicted to but rather the stream of data it feeds us1. Just as decreased sugar prices have made it easier to consume more sugar, the barrier to data consumption has exponentially dropped, and we find ourselves designing tools that feed us ever-growing quantities of data. I do not think it was intentional, but the byproduct of this is a society that has been left creatively, emotionally, and intellectually devastated. As a result, it came as a breath of fresh air, when I stumbled upon Matt Jones' blog, Magical Nihilism. It is the home to a decade's worth of curious thoughts and</p>
+          
+          <h2 class="sans">Audio Automata</h2>
+          <figure class="small">
+            <a href="../images/posters.jpg" title="Image Title" target="_blank">
+              <canvas id="audioViz"></canvas>
+            </a>
+            <figcaption>
+              <p>This is an example of an image caption.</p>
+            </figcaption>
+          </figure>
+
+          <p>What follows is an attempt to empty my mind of the ideas and thoughts that have been coalescing over the past 20 years. In doing so, I hope to bring a level of clarity to my beliefs about creation and the future of design, while also producing a living document that I can share with others.</p>
+          
+          <h2 class="sans">The Adam Attractor</h2>
+          <figure class="small">
+            <a href="../images/posters.jpg" title="Image Title" target="_blank">
+              <canvas id="audioViz"></canvas>
+            </a>
+            <figcaption>
+              <p>This is an example of an image caption.</p>
+            </figcaption>
+          </figure>
+
+          <p>What follows is an attempt to empty my mind of the ideas and thoughts that have been coalescing over the past 20 years. In doing so, I hope to bring a level of clarity to my beliefs about creation and the future of design, while also producing a living document that I can share with others.</p>
           
           <div class="footnotes small">
             <ol>
