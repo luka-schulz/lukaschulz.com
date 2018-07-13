@@ -33,65 +33,65 @@ let socket;
 let imageToggle = 0;
 let yourKey = "AIzaSyA-J6H4RpYlo3LShNr345wfy1fjj4wP4wU";
 let yourID = "006492290114220674113:v5hcbcsea2y";
-let query;
+let query = "woman standing in a room holding a nintendo wii controller .";
 
 // Wait until the page is loaded
-document.addEventListener("DOMContentLoaded", function(event) {
-  init();
-  
-  // A variable to hold the status of the connection
-  var status = document.getElementById('status');
-
-  // Create a connection with Runway
-  // *You should update this address to match the URL provided by the app
-  // 192.168.1.40:33100
-   socket = io.connect('http://10.12.8.31:33100/query');
-   
-
-  // When a connection is established
-  socket.on('connect', function() {
-    status.innerHTML = 'Connected';
-  });
-  // Handle connection error (in case something is wrong and we can't connect to Runway)
-  socket.on('connect_error', (error) => {
-    console.error(error);
-  });
-  // Handle connection timeout (in case something is wrong and it's taking ages connecting to Runway)
-  socket.on('connect_timeout', (timeout) => {
-    console.warn(socket.io.uri,"connect_timeout",timeout);
-  });
-
-  // When there is new data coming in, update the log element
-  // With im2text, an object is returned in the format:
-  // {
-  //   "results": [
-  //     {
-  //       "caption": "caption 01",
-  //       "prob": 0.0014072401693329688
-  //     },
-  //     {
-  //       "caption": "caption 02",
-  //       "prob": 0.0005297117344185971
-  //     },
-  //     {
-  //       "caption": "caption 03",
-  //       "prob": 0.0005098398921959475
-  //     }
-  //   ]
-  // }
-  socket.on('update_response', function(data) {
-    // Use the most probable result
-    let caption = data.results[0].caption;
-    
-    // Generate a cpation
-    createCaption( caption );
-    
-    // Redundant, but assign the caption to the google query vairable
-    query = caption;
-    
-    googleImage();
-  });
-});
+//document.addEventListener("DOMContentLoaded", function(event) {
+//  init();
+//  
+//  // A variable to hold the status of the connection
+//  var status = document.getElementById('status');
+//
+//  // Create a connection with Runway
+//  // *You should update this address to match the URL provided by the app
+//  // 192.168.1.40:33100
+//   socket = io.connect('http://10.12.8.31:33100/query');
+//   
+//
+//  // When a connection is established
+//  socket.on('connect', function() {
+//    status.innerHTML = 'Connected';
+//  });
+//  // Handle connection error (in case something is wrong and we can't connect to Runway)
+//  socket.on('connect_error', (error) => {
+//    console.error(error);
+//  });
+//  // Handle connection timeout (in case something is wrong and it's taking ages connecting to Runway)
+//  socket.on('connect_timeout', (timeout) => {
+//    console.warn(socket.io.uri,"connect_timeout",timeout);
+//  });
+//
+//  // When there is new data coming in, update the log element
+//  // With im2text, an object is returned in the format:
+//  // {
+//  //   "results": [
+//  //     {
+//  //       "caption": "caption 01",
+//  //       "prob": 0.0014072401693329688
+//  //     },
+//  //     {
+//  //       "caption": "caption 02",
+//  //       "prob": 0.0005297117344185971
+//  //     },
+//  //     {
+//  //       "caption": "caption 03",
+//  //       "prob": 0.0005098398921959475
+//  //     }
+//  //   ]
+//  // }
+//  socket.on('update_response', function(data) {
+//    // Use the most probable result
+//    let caption = data.results[0].caption;
+//    
+//    // Generate a cpation
+//    createCaption( caption );
+//    
+//    // Redundant, but assign the caption to the google query vairable
+//    query = caption;
+//    
+//    //googleImage();
+//  });
+//});
 
 // Initiate the machine learning loop
 function init() {
@@ -119,7 +119,7 @@ function createImage( link ) {
   // Helper function that runs only when the image has been loaded
   function loaded() {
     // Flag the image for CORS
-    img.crossOrigin="anonymous" ;
+    img.crossOrigin = "anonymous" ;
     // Scale the image
     img = proportionallyScale( img );
     
@@ -143,9 +143,10 @@ function createImage( link ) {
 // Once the image has loaded
 function sendImgToRunway( img ) {
   // Send the image to Runway and specify the model to use
-  socket.emit( 'update_request', {
-    data: img.toDataURL('image/jpeg'),
-  } );
+//  socket.emit( 'update_request', {
+//    data: img.toDataURL('image/jpeg'),
+//  } );
+  img.toDataURL('image/jpeg');
 }
 
 function googleImage() {
@@ -153,16 +154,16 @@ function googleImage() {
   
   console.log( googleSearch );
   
-//  // Using the Google Search API and fetch to pull a JSON file for a single image
-//  let googleImage = fetch( googleSearch ).then( result => {
-//    return result.json()
-//  }).then(
-//    // Parse the JSON
-//    parsedJSON => parsedJSON.items["0"].link
-//  ).then(
-//    // Create the image
-//    link => createImage(link)
-//  )
+  // Using the Google Search API and fetch to pull a JSON file for a single image
+  let googleImage = fetch( googleSearch ).then( result => {
+    return result.json()
+  }).then(
+    // Parse the JSON
+    parsedJSON => parsedJSON.items["0"].link
+  ).then(
+    // Create the image
+    link => createImage(link)
+  )
 }
 
 function proportionallyScale( img ) {
@@ -192,6 +193,7 @@ function createCaption( string ) {
   document.body.appendChild( div );
 }
 
+googleImage();
 
 
 
