@@ -151,16 +151,18 @@ function sendImgToRunway( img ) {
 function googleImage() {
   let googleSearch = `https://www.googleapis.com/customsearch/v1?key=${yourKey}&cx=${yourID}&num=1&searchType=image&fileType=jpg&q=${query}`;
   
-  // Using the Google Search API and fetch to pull a JSON file for a single image
-  let googleImage = fetch( googleSearch ).then( result => {
-    return result.json()
-  }).then(
-    // Parse the JSON
-    parsedJSON => parsedJSON.items["0"].link
-  ).then(
-    // Create the image
-    link => createImage(link)
-  )
+  console.log( googleSearch );
+  
+//  // Using the Google Search API and fetch to pull a JSON file for a single image
+//  let googleImage = fetch( googleSearch ).then( result => {
+//    return result.json()
+//  }).then(
+//    // Parse the JSON
+//    parsedJSON => parsedJSON.items["0"].link
+//  ).then(
+//    // Create the image
+//    link => createImage(link)
+//  )
 }
 
 function proportionallyScale( img ) {
