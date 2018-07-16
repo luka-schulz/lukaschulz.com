@@ -1,0 +1,322 @@
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  position: relative;
+  vertical-align: baseline;
+  font-size: 100%;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+video {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+
+/* Display */
+
+.b {
+  display: block;
+}
+
+.ib {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.hide {
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+
+
+/* Structure */
+
+html {
+  background-color: #ffffff;
+  color: #0b0b0b;
+  font-size: 18px;
+  hyphens: none;
+
+  font-family: "Untitled Sans Test";
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.site__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  padding: 40px 0 0;
+}
+
+.site__title {
+  margin-right: 20px;
+}
+
+.site__content {
+  min-height: 100vh;
+  margin-bottom: 100px;
+}
+
+.site__footer {
+  margin-bottom: 60px;
+}
+
+.nav {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.nav li {
+  display: inline-block;
+}
+
+.nav li + li {
+  margin-left: 10px;
+}
+
+figure {
+  margin: 40px 0;
+}
+
+
+
+
+
+/* Spacing */
+
+.mr {
+  margin-right: 20px;
+}
+
+.mbxs {
+  margin-bottom: 5px;
+}
+
+.mbs {
+  margin-bottom: 10px;
+}
+
+.mb{
+  margin-bottom: 20px;
+}
+
+.mbl {
+  margin-bottom: 40px;
+}
+
+.phl {
+  margin: 0 40px;
+}
+
+
+
+/* Global Typography */
+
+h1 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+p + h2 {
+  margin-top: 40px;
+}
+
+figure + h2 {
+  margin-top: 40px;
+}
+
+p {
+  line-height: 30px;
+}
+
+p + p {
+  text-indent: 30px;
+}
+
+.pullout {
+  font-size: 30px;
+  line-height: 45px;
+}
+
+.small {
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 25px;
+  color: #7b7b7b;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-skip: ink;
+  text-decoration-skip-ink: auto;
+}
+
+a:hover, a:focus {
+  color: #7b7b7b;
+}
+
+.plainlink {
+  text-decoration: none;
+}
+
+.activelink {
+  text-decoration: underline;
+}
+
+.a1 {
+  color: #7b7b7b;
+}
+
+strong { 
+  font-weight: normal;
+  font-weight: 500;
+}
+
+.italic {
+  font-style: italic;
+}
+
+
+
+/* Home */
+
+.filter {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.grid__item {
+  width: calc((100% / 2) - 10px);
+  margin-bottom: 20px;
+  display: block;
+}
+
+.grid__link {
+  display: block;
+}
+
+.grid__image {
+  outline: 2px solid rgba(123, 123, 123, 0);
+  outline-offset: -2px;
+  transition: .2s ease;
+}
+
+.grid__item:hover .grid__image {
+  outline: 2px solid rgba(123, 123, 123, .5);
+}
+
+
+
+/* Blog */
+
+.list__item {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(123, 123, 123, .2);
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.list__main {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.list__description {
+  color: #7b7b7b;
+}
+
+/* Post */
+
+.post__content p {
+  max-width: 700px;
+  margin-bottom: 10px;
+}
+
+.fit {
+  max-width: 700px;
+}
+
+figcaption.flex p {
+  width: 50%;
+}
+
+/* About */
+
+.about__content {
+  max-width: 700px;
+}
+
+.about__links ul {
+  list-style: none;
+  margin: 100px 0;
+  padding-left: 0;
+}
+
+.about__links li {
+  display: inline-block;
+}
+
+.about__links li + li {
+  margin-left: 40px;
+}
+
+
+/* Creation of Adam */
+
+.project__content p {
+  max-width: 700px;
+  margin-bottom: 10px;
+}
+
+canvas {
+  width: 700px;
+  height: 700px;
+  background: black;
+}
+
+#creationOfAdam figure {
+  display: flex;
+}
+
+#creationOfAdam canvas {
+  flex-shrink: 0;
+}

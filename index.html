@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"content="initial-scale=1">
+
+    <title>luka schulz, ordinaire</title>
+
+    <meta property="og:title" content="Home"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="luka Schulz, Ordinaire"/>
+    <meta property="og:url" content="http://lukaschulz.com/"/>
+    <meta property="og:description" content="{{ page.content | strip_html | lstrip | truncatewords: 50 }}"/>
+    <meta property="og:image" content=""/>
+
+    <meta name="theme-color" content="#7b7b7b" />
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    <link rel="shortcut icon" href="yes-its-upsidedown.png">
+    
+    <script src="https://unpkg.com/ml5" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
+    
+    <script>
+      // how many classes
+      let numClasses = 3;
+
+      let featureExtractor;
+      let classifier;
+      let video;
+      let loss;
+      let numImages;
+      let samples;
+      let label;
+      let buttons;
+
+      function setup() {
+        createCanvas(500, 500);
+
+        samples = [];
+        samples[0] = "https://www.behance.net/gallery/53837551/HOMIE";
+        samples[1] = "http://lukaschulz.com/01/about.html"
+        samples[2] = "http://lukaschulz.com/"
+
+        label = 0;
+
+        numImages = Array(numClasses).fill(0);
+
+        video = createCapture(VIDEO);
+        video.parent('videoContainer');
+
+        featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
+        featureExtractor.numClasses = numClasses;
+        classifier = featureExtractor.classification(video);
+
+        createButtons();
+
+      }
+
+      function modelReady() {
+        select('#loading').html('Base Model (MobileNet) loaded!');
+      }
+
+      function addImage(label) {
+        classifier.addImage(label);
+      }
+
+      function classify() {
+        classifier.classify(gotResults);
+      }
+
+      function createButtons() {
+        buttons = [];
+        for (var i=0; i<numClasses; i++) {
+          var button = createButton('class '+i);
+          button.parent('buttons');
+          button.id('class'+i);
+          buttons.push(button);
+          !function outer(i){
+            button.mousePressed(function() {
+              addImage(i);
+              numImages[i]++;
+              select('#class'+i).html('class '+i+': '+numImages[i]);
+            });
+          }(i)
+        }
+
+        // Train Button
+        train = select('#train');
+        train.mousePressed(function() {
+          classifier.train(function(lossValue) {
+            if (lossValue) {
+              loss = lossValue;
+              select('#loss').html('Loss: ' + loss);
+            } else {
+              select('#loss').html('Done Training! Final Loss: ' + loss);
+            }
+          });
+        });
+
+        // Predict Button
+        buttonPredict = select('#buttonPredict');
+        buttonPredict.mousePressed(classify);
+      }
+
+      function gotResults(nextLabel) {
+        select('#result').html(nextLabel);
+        if (label != nextLabel) {
+          label = nextLabel;
+          samples[int(label)].play();  
+        }
+        classify();
+      }
+
+      function draw() {
+        background(0);
+        image(img, 50, 50);
+      }
+
+    </script>
+  
+  </head>
+  
+  <body class="phl">
+
+    <header class="wrap sans site__header"role="banner">
+      <a class="site__title b plainlink"href="index.html">Luka Schulz</a>
+
+      <nav class="site__nav"role="navigation">
+        <ul class="nav">
+          <li><a class="plainlink"href="./blog.html">Blog</a></li>
+          <li><a class="plainlink"href="./about.html">About</a></li>
+
+        </ul>
+      </nav>
+
+    </header>
+
+    <main class="wrap site__content" role="main">
+      <nav>
+        <ul class="nav filter">
+          <li><a class="plainlink activelink" href="#">All</a></li>
+          <li><a class="plainlink" href="/about/">UX/UI</a></li>
+          <li><a class="plainlink" href="/about/">3D</a></li>
+          <li><a class="plainlink" href="/about/">Motion</a></li>
+        </ul>
+      </nav>
+
+      <div class="page__content grid">
+        <a class="grid__item mbl">
+          <div class="mbs grid__link" href="#">
+            <img class="grid__image" src="./images/grid/everydays.jpg">
+          </div>
+          
+          <div class="grid__caption">
+            <p class="mbxs"><strong>Manuscripts</strong> — Untouchable beauty</p>
+            <div class="a1">View Project</div>
+          </div>
+        </a>
+
+        <a class="grid__item mbl" href="./portfolio/creation-of-adam/index.html">
+          <div class="mbs grid__link">
+            <img class="grid__image" src="./images/grid/creation-of-adam.jpg">
+          </div>
+          
+          <div class="grid__caption">
+            <p class="mbxs"><strong>Creation of Adam</strong> — Learning to learn</p>
+            <div class="a1">View Project</div>
+          </div>
+        </a>
+        
+        <a class="grid__item mbl" href="#">
+          <div class="mbs grid__link">
+            <img class="grid__image" src="./images/grid/everydays.jpg">
+          </div>
+
+          <div class="grid__caption">
+            <p class="mbxs"><strong>Imagine Poster</strong> — Built for creativity</p>
+            <div class="a1">View Project</div>
+          </div>
+        </a>
+
+        <a class="grid__item mbl" href="#">
+          <div class="mbs grid__link">
+            <img class="grid__image" src="./images/grid/everydays.jpg">
+          </div>
+
+          <div class="grid__caption">
+            <p class="mbxs"><strong>View Master</strong> — The real reel</p>
+            <div class="a1">View Project</div>
+          </div>
+        </a>
+
+        <a class="grid__item mbl" href="#">
+          <div class="mbs grid__link">
+            <img class="grid__image" src="./images/grid/mycourses.png">
+          </div>
+
+          <div class="grid__caption">
+            <p class="mbxs"><strong>myCourses</strong> — Making education smarter</p>
+            <div class="a1">View Project</div>
+          </div>
+        </a>
+
+      </div>
+
+    </main>
+    
+    <footer class="wrap site__footer">
+      <div>© 2018 Luka Schulz</div>
+    </footer>
+
+  </body>
+  
+  
+  
+</html>
