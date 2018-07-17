@@ -5,6 +5,16 @@
     <meta name="viewport"content="initial-scale=1">
 
     <title>luka schulz, ordinaire</title>
+    
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/5.2.0/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
 
     <meta property="og:title" content="Home"/>
     <meta property="og:type" content="website" />
@@ -18,109 +28,6 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     
     <link rel="shortcut icon" href="yes-its-upsidedown.png">
-    
-    <script src="https://unpkg.com/ml5" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.min.js"></script>
-    
-    <script>
-      // how many classes
-      let numClasses = 3;
-
-      let featureExtractor;
-      let classifier;
-      let video;
-      let loss;
-      let numImages;
-      let samples;
-      let label;
-      let buttons;
-
-      function setup() {
-        createCanvas(500, 500);
-
-        samples = [];
-        samples[0] = "https://www.behance.net/gallery/53837551/HOMIE";
-        samples[1] = "http://lukaschulz.com/01/about.html"
-        samples[2] = "http://lukaschulz.com/"
-
-        label = 0;
-
-        numImages = Array(numClasses).fill(0);
-
-        video = createCapture(VIDEO);
-        video.parent('videoContainer');
-
-        featureExtractor = ml5.featureExtractor('MobileNet', modelReady);
-        featureExtractor.numClasses = numClasses;
-        classifier = featureExtractor.classification(video);
-
-        createButtons();
-
-      }
-
-      function modelReady() {
-        select('#loading').html('Base Model (MobileNet) loaded!');
-      }
-
-      function addImage(label) {
-        classifier.addImage(label);
-      }
-
-      function classify() {
-        classifier.classify(gotResults);
-      }
-
-      function createButtons() {
-        buttons = [];
-        for (var i=0; i<numClasses; i++) {
-          var button = createButton('class '+i);
-          button.parent('buttons');
-          button.id('class'+i);
-          buttons.push(button);
-          !function outer(i){
-            button.mousePressed(function() {
-              addImage(i);
-              numImages[i]++;
-              select('#class'+i).html('class '+i+': '+numImages[i]);
-            });
-          }(i)
-        }
-
-        // Train Button
-        train = select('#train');
-        train.mousePressed(function() {
-          classifier.train(function(lossValue) {
-            if (lossValue) {
-              loss = lossValue;
-              select('#loss').html('Loss: ' + loss);
-            } else {
-              select('#loss').html('Done Training! Final Loss: ' + loss);
-            }
-          });
-        });
-
-        // Predict Button
-        buttonPredict = select('#buttonPredict');
-        buttonPredict.mousePressed(classify);
-      }
-
-      function gotResults(nextLabel) {
-        select('#result').html(nextLabel);
-        if (label != nextLabel) {
-          label = nextLabel;
-          samples[int(label)].play();  
-        }
-        classify();
-      }
-
-      function draw() {
-        background(0);
-        image(img, 50, 50);
-      }
-
-    </script>
-  
-  </head>
   
   <body class="phl">
 
