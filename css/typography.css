@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Light.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Light.eot?#iefix" ) format( "embedded-opentype" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-Light.woff2" ) format( "woff2" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-Light.woff" ) format( "woff" );
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-LightItalic.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-LightItalic.eot?#iefix" ) format( "embedded-opentype" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-LightItalic.woff2" ) format( "woff2" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-LightItalic.woff" ) format( "woff" );
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Regular.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Regular.eot?#iefix" ) format( "embedded-opentype" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-Regular.woff2" ) format( "woff2" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-Regular.woff" ) format( "woff" );
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-RegularItalic.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-RegularItalic.eot?#iefix" ) format( "embedded-opentype" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-RegularItalic.woff2" ) format( "woff2" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-RegularItalic.woff" ) format( "woff" );
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Medium.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Medium.eot?#iefix" ) format( "embedded-opentype" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-Medium.woff2" ) format( "woff2" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-Medium.woff" ) format( "woff" );
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-MediumItalic.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-MediumItalic.eot?#iefix" ) format( "embedded-opentype" ),
+      url( "../fonts/untitled-sans/UntitledSansWeb-MediumItalic.woff2" ) format( "woff2" ),
+      url( "../fonts/untitled-sans/UntitledSansWeb-MediumItalic.woff" ) format( "woff" );
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Bold.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Bold.eot?#iefix" ) format( "embedded-opentype" ),
+      url( "../fonts/untitled-sans/UntitledSansWeb-Bold.woff2" ) format( "woff2" ),
+      url( "../fonts/untitled-sans/UntitledSansWeb-Bold.woff" ) format( "woff" );
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-BoldItalic.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-BoldItalic.eot?#iefix" ) format( "embedded-opentype" ),
+      url( "../fonts/untitled-sans/UntitledSansWeb-BoldItalic.woff2" ) format( "woff2" ),
+      url( "../fonts/untitled-sans/UntitledSansWeb-BoldItalic.woff" ) format( "woff" );
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+  font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Black.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-Black.eot?#iefix" ) format( "embedded-opentype" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-Black.woff2" ) format( "woff2" ),
+    url( "../fonts/untitled-sans/UntitledSansWeb-Black.woff" ) format( "woff" );
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: "Untitled Sans";
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-BlackItalic.eot" );
+  src: url( "../fonts/untitled-sans/UntitledSansWeb-BlackItalic.eot?#iefix" ) format( "embedded-opentype" ),
+      url( "../fonts/untitled-sans/UntitledSansWeb-BlackItalic.woff2" ) format( "woff2" ),
+      url( "../fonts/untitled-sans/UntitledSansWeb-BlackItalic.woff" ) format( "woff" );
+    font-weight: 900;
+    font-style: italic;
+}
