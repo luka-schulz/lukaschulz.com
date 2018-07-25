@@ -23,8 +23,9 @@
     <meta property="og:description" content="{{ page.content | strip_html | lstrip | truncatewords: 50 }}"/>
     <meta property="og:image" content=""/>
 
-    <meta name="theme-color" content="#7b7b7b" />
+    <meta name="theme-color" content="#b4b4b4" />
 
+    <link href="css/typography.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     
     <link rel="shortcut icon" href="yes-its-upsidedown.png">
@@ -33,13 +34,12 @@
   <body class="phl">
 
     <header class="wrap sans site__header"role="banner">
-      <a class="site__title b plainlink"href="./">Luka Schulz</a>
+      <a class="site__title b plainLink"href="./">Luka Schulz</a>
 
       <nav class="site__nav"role="navigation">
         <ul class="nav">
-          <li><a class="plainlink"href="./blog.html">Blog</a></li>
-          <li><a class="plainlink"href="./about.html">About</a></li>
-
+          <li><a class="plainLink"href="./blog.html">Blog</a></li>
+          <li><a class="plainLink"href="./about.html">About</a></li>
         </ul>
       </nav>
 
@@ -47,22 +47,24 @@
 
     <main class="wrap site__content" role="main">
       <nav>
-        <ul class="nav filter">
-          <li><a class="plainlink activelink" href="#">All</a></li>
-          <li><a class="plainlink" href="/about/">UX/UI</a></li>
-          <li><a class="plainlink" href="/about/">3D</a></li>
-          <li><a class="plainlink" href="/about/">Motion</a></li>
+        <ul class="nav filter mbl">
+          <li><a class="plainLink activeLink" href="#">All</a></li>
+          <li><a class="plainLink" href="/about/">UX/UI</a></li>
+          <li><a class="plainLink" href="/about/">3D</a></li>
+          <li><a class="plainLink" href="/about/">Motion</a></li>
         </ul>
       </nav>
+      
+      <div class="decorationSmall mbl"></div>
 
       <div class="page__content grid">
         <div class="grid__item mbl">
-          <a class="mbs grid__link" href="./index.html">
+          <a class="mbs grid__link" href="./portfolio/illuminated-manuscripts/index.html">
             <img class="grid__image" src="./images/grid/everydays.jpg">
           </a>
           
-          <a class="grid__caption plainlink" href="./index.html">
-            <p><strong>Manuscripts</strong> — Untouchable beauty</p>
+          <a class="grid__caption plainLink" href="./portfolio/illuminated-manuscripts/index.html">
+            <p><strong>Illuminated Manuscripts</strong> — Untouchable beauty</p>
           
             <div class="viewProject">
               <div class="small a1">View Project</div>
@@ -75,11 +77,11 @@
         </div>
         
         <div class="grid__item mbl">
-          <a class="mbs grid__link" href="./portfolio/creation-of-adam/">
+          <a class="mbs grid__link" href="./portfolio/creation-of-adam/index.html">
             <img class="grid__image" src="./images/grid/creation-of-adam.jpg">
           </a>
 
-          <a class="grid__caption plainlink" href="./portfolio/creation-of-adam/">
+          <a class="grid__caption plainLink" href="./portfolio/creation-of-adam/index.html">
             <p><strong>Creation of Adam</strong> — Learning to learn</p>
 
             <div class="viewProject">
@@ -93,12 +95,12 @@
         </div>
         
         <div class="grid__item mbl">
-          <a class="mbs grid__link" href="./portfolio/imagine-rit/">
+          <a class="mbs grid__link" href="./portfolio/imagine-rit/index.html">
             <img class="grid__image" src="./images/grid/imagine-rit.jpg">
           </a>
 
-          <a class="grid__caption plainlink" href="./portfolio/imagine-rit/">
-            <p><strong>Imagine Poster</strong> — Built for creativity</p>
+          <a class="grid__caption plainLink" href="./portfolio/imagine-rit/index.html">
+            <p><strong>Imagine RIT Poster</strong> — Built for creativity</p>
 
             <div class="viewProject">
               <div class="small a1">View Project</div>
@@ -111,11 +113,11 @@
         </div>
         
         <div class="grid__item mbl">
-          <a class="mbs grid__link" href="./portfolio/imagine-rit/">
+          <a class="mbs grid__link" href="./portfolio/view-master/index.html">
             <img class="grid__image" src="./images/grid/imagine-rit.jpg">
           </a>
 
-          <a class="grid__caption plainlink" href="./portfolio/imagine-rit/">
+          <a class="grid__caption plainLink" href="./portfolio/view-master/index.html">
             <p><strong>View Master</strong> — Bringing it way back</p>
 
             <div class="viewProject">
@@ -129,12 +131,66 @@
         </div>
         
         <div class="grid__item mbl">
-          <a class="mbs grid__link" href="./portfolio/mycourses/">
+          <a class="mbs grid__link" href="./portfolio/mycourses/index.html">
             <img class="grid__image" src="./images/grid/mycourses.png">
           </a>
 
-          <a class="grid__caption plainlink" href="./portfolio/mycourses/">
+          <a class="grid__caption plainLink" href="./portfolio/mycourses/index.html">
             <p><strong>myCourses</strong> — Making education smarter</p>
+
+            <div class="viewProject">
+              <div class="small a1">View Project</div>
+              <svg id="linkArrow" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                <polygon points="8.5,17.5 8.5,9.5 13.5,13.5"/>
+              </svg>
+            </div>
+
+          </a>
+        </div>
+        
+        <div class="grid__item mbl">
+          <a class="mbs grid__link" href="./portfolio/ar-experiments/index.html">
+            <img class="grid__image" src="./images/grid/mycourses.png">
+          </a>
+
+          <a class="grid__caption plainLink" href="./portfolio/ar-experiments/index.html">
+            <p><strong>AR Experiments</strong> — Distributed computation</p>
+
+            <div class="viewProject">
+              <div class="small a1">View Project</div>
+              <svg id="linkArrow" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                <polygon points="8.5,17.5 8.5,9.5 13.5,13.5"/>
+              </svg>
+            </div>
+
+          </a>
+        </div>
+        
+        <div class="grid__item mbl">
+          <a class="mbs grid__link" href="./portfolio/_exout/index.html">
+            <img class="grid__image" src="./images/grid/mycourses.png">
+          </a>
+
+          <a class="grid__caption plainLink" href="./portfolio/_exout//index.html">
+            <p><strong>#ExOut</strong> — A design system for social activism</p>
+
+            <div class="viewProject">
+              <div class="small a1">View Project</div>
+              <svg id="linkArrow" xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+                <polygon points="8.5,17.5 8.5,9.5 13.5,13.5"/>
+              </svg>
+            </div>
+
+          </a>
+        </div>
+        
+        <div class="grid__item mbl">
+          <a class="mbs grid__link" href="./portfolio/goofy-google/index.html">
+            <img class="grid__image" src="./images/grid/goofy-google.png">
+          </a>
+
+          <a class="grid__caption plainLink" href="./portfolio/goofy-google/index.html">
+            <p><strong>Goofy Google</strong> — Learning machine learning</p>
 
             <div class="viewProject">
               <div class="small a1">View Project</div>
@@ -154,7 +210,20 @@
     <footer class="wrap site__footer">
       <div>© 2018 Luka Schulz</div>
     </footer>
-
+    
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyD7DGEVmzaYtci8Rg3e68EE7aX5y4ucvd4",
+        authDomain: "portfolio-lukaschulz.firebaseapp.com",
+        databaseURL: "https://portfolio-lukaschulz.firebaseio.com",
+        projectId: "portfolio-lukaschulz",
+        storageBucket: "portfolio-lukaschulz.appspot.com",
+        messagingSenderId: "829657753538"
+      };
+      firebase.initializeApp(config);
+    </script>
   </body>
   
 </html>

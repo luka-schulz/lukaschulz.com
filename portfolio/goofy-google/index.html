@@ -4,17 +4,18 @@
     <meta charset="utf-8">
     <meta name="viewport"content="initial-scale=1">
 
-    <title>The Creation of Adam</title>
+    <title>Goofy Google | Luka Schulz</title>
 
     <meta property="og:title" content="Blog"/>
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="uka Schulz, Ordinaire"/>
+    <meta property="og:site_name" content="Goofy Google | Luka Schulz"/>
     <meta property="og:url" content="http://lukaschulz.com/blog"/>
-    <meta property="og:description" content="{{ page.content | strip_html | lstrip | truncatewords: 50 }}"/>
+    <meta property="og:description" content="Goofy Google"/>
     <meta property="og:image" content=""/>
 
-    <meta name="theme-color" content="#7b7b7b" />
+    <meta name="theme-color" content="#b4b4b4" />
 
+    <link href="../../css/typography.css" rel="stylesheet" type="text/css">
     <link href="../../css/style.css" rel="stylesheet" type="text/css">
 
     <link rel="shortcut icon" href="../../yes-its-upsidedown.png">
@@ -24,12 +25,12 @@
   <body class="phl">
 
     <header class="wrap sans site__header"role="banner">
-      <a class="site__title b plainlink"href="../../index.html">Luka Schulz</a>
+      <a class="site__title b plainLink"href="../../index.html">Luka Schulz</a>
 
       <nav class="site__nav"role="navigation">
         <ul class="nav">
-          <li><a class="plainlink"href="../../blog.html">Blog</a></li>
-          <li><a class="plainlink"href="../../about.html">About</a></li>
+          <li><a class="plainLink"href="../../blog.html">Blog</a></li>
+          <li><a class="plainLink"href="../../about.html">About</a></li>
 
         </ul>
       </nav>
@@ -43,14 +44,23 @@
         <p class="post__date small">Experimental, Machine Learning</p>
       </header>
 
-      <article class="project__content" id="creationOfAdam">
+      <article class="project__content" id="goofyGoogle">
         <p>In the summer of 2018, I had the opportunity to take a week long class in machine learning (ML) with <a href="https://andreasrefsgaard.dk/">Andreas Refsgaard</a> and <a href="http://genekogan.com/">Gene Kogan</a>. If you are curious about the Copenhagen Institue of Interaction Design Summer School program, I have written about my experience <a href="#">here</a>. However, if you are curious about the project I made during that week... then this is the HTML file you were looking for.</p>
         
         <h2 class="mb">Learning Machine Learning</h2>
         
-        <p>The goal of my project was to make a thing that could leverage machine learning. Albeit this is rather vague goal, it was my first time playing around with machine learning so it felt appropriate to set the bar low to give myself room to play. The idea for my project came from two rounds of brainstorming with two other friends. Of the 23 ideas that I had come up with, Goofy Google (Telephoney at the time) was the class favorite.</p>
+        <p>The goal of my project was to make a thing that could leverage machine learning. Albeit this is rather vague goal, it was my first time playing around with machine learning so it felt appropriate to give myself room to play. The idea for my project came out of two rounds of brainstorming with two other friends in the class. Of the 23 ideas that I had come up with, Goofy Google (Telephoney at the time) seemed like the most intersting idea to pursue.</p>
         
-        <p>The basic idea behind Goofy Google was to use the image-to-text model from <a href="#">Runway</a> to generate intersting Google search queries. By the end of the project though, it turned into something a little more hilarious. I ended up creating an autonmous agent that could traverse the strangness that is Google Images.</p>
+        <figure class="fit">
+          <a href="./sticky-note.jpg" title="A pink sticky note." target="_blank">
+            <img src="./sticky-note.jpg" style="background: rgb(255, 39, 122);">
+          </a>
+          <figcaption class="flex small">
+            <p>Goofy Google in its embryonic form.</p>
+          </figcaption>
+        </figure>
+        
+        <p>The basic idea behind Goofy Google was to use the image-to-text model from <a href="#">Runway</a> to generate intersting Google search queries. By the end of the project though, it turned into something a little more humorous. I ended up creating an autonmous agent that could traverse the strangness that is Google Images.</p>
         
 <!--
         <blockquote class="pullout mbl">What would it look like if you let a Machine Learning algorithim explore  Google Images?</blockquote>

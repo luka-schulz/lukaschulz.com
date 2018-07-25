@@ -75,12 +75,16 @@ html {
 }
 
 .site__content {
-  min-height: 100vh;
+  min-height: 60vh;
   margin-bottom: 100px;
 }
 
 .site__footer {
   margin-bottom: 60px;
+}
+
+.fit {
+  max-width: 700px;
 }
 
 .nav {
@@ -101,11 +105,26 @@ figure {
   margin: 40px 0;
 }
 
+p + figure {
+  margin-top: 40px;
+}
+
+.decorationSmall {
+  margin: 0 auto;
+  width: 20px;
+  height: 1px;
+  background: black;
+}
+
 
 
 
 
 /* Spacing */
+
+.mrs {
+  margin-right: 10px;
+}
 
 .mr {
   margin-right: 20px;
@@ -151,15 +170,6 @@ p + h2 {
   margin-top: 40px;
 }
 
-p + blockquote {
-  margin-top: 40px;
-}
-
-blockquote {
-  border-left: 2px solid black;
-  padding-left: 20px;
-}
-
 figure + h2 {
   margin-top: 40px;
 }
@@ -170,6 +180,15 @@ p {
 
 p + p {
   text-indent: 30px;
+}
+
+p + blockquote {
+  margin-top: 40px;
+}
+
+blockquote {
+  border-left: 2px solid black;
+  padding-left: 20px;
 }
 
 .pullout {
@@ -196,12 +215,16 @@ a:hover, a:focus {
   color: #b4b4b4;
 }
 
-.plainlink {
+.plainLink {
   text-decoration: none;
 }
 
-.activelink {
+.activeLink {
   text-decoration: underline;
+}
+
+.inactiveLink {
+  color: #b4b4b4;
 }
 
 .a1 {
@@ -221,9 +244,13 @@ strong {
 
 /* Home */
 
+.site__content nav {
+  display: flex;
+  justify-content: space-around;
+}
+
 .filter {
-  margin: 0 auto;
-  margin-bottom: 20px;
+  display: inline-block;
 }
 
 .grid {
@@ -291,15 +318,13 @@ strong {
   color: #b4b4b4;
 }
 
+
+
 /* Post */
 
 .post__content p {
   max-width: 700px;
   margin-bottom: 10px;
-}
-
-.fit {
-  max-width: 700px;
 }
 
 figcaption.flex p {
@@ -309,6 +334,8 @@ figcaption.flex p {
 figcaption p + p {
   text-indent: 0px;
 }
+
+
 
 /* About */
 
@@ -331,16 +358,17 @@ figcaption p + p {
 }
 
 
-/* Creation of Adam */
+
+/* Project */
 
 .project__content p {
   max-width: 700px;
   margin-bottom: 10px;
 }
 
-p + figure {
-  margin-top: 40px;
-}
+
+
+/* Creation of Adam */
 
 canvas {
   width: 700px;
@@ -354,8 +382,4 @@ canvas {
 
 #creationOfAdam canvas {
   flex-shrink: 0;
-}
-
-figure .middle {
-  margin: 0 10px;
 }
