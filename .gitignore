@@ -5,6 +5,7 @@ fonts/
 *.tif
 *.ai
 *.psd
+*.c4d
 
 # OS generated files #
 ######################
