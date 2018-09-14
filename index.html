@@ -4,23 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport"content="initial-scale=1">
 
-    <title>luka schulz, ordinaire</title>
-    
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.2.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.2.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.2.0/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+    <title>Luka Schulz</title>
 
     <meta property="og:title" content="Home"/>
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="luka Schulz, Ordinaire"/>
+    <meta property="og:site_name" content="Luka Schulz"/>
     <meta property="og:url" content="http://lukaschulz.com/"/>
-    <meta property="og:description" content="{{ page.content | strip_html | lstrip | truncatewords: 50 }}"/>
+    <meta property="og:description" content="The portfolio of Luka Schulz"/>
     <meta property="og:image" content=""/>
 
     <meta name="theme-color" content="#b4b4b4" />
@@ -29,6 +19,36 @@
     <link href="css/style.css" rel="stylesheet" type="text/css">
     
     <link rel="shortcut icon" href="yes-its-upsidedown.png">
+    
+    <script>
+      window.onload = function() {
+        const filter = document.getElementById( "filter" );
+        const filterLinks = filter.getElementsByClassName( "plainLink" );
+        const filterStatus = document.getElementById( "filterStatus" );
+        
+        for( let i = 0; i < filterLinks.length; i++ ) {
+          filterLinks[i].onclick = toggleStatus;
+        };
+        
+        function toggleStatus( element ) {
+          let elementWidth = element.target.offsetWidth;
+          let filterStatusWidth = elementWidth + "px";
+          filterStatus.style.width = filterStatusWidth;
+          
+          let offset = 0;
+          
+          for( let i = 0; i < element.target.dataset.id; i++ ) {
+            offset += filterLinks[i].offsetWidth + 14;
+          }
+          
+          filterStatus.style.marginLeft = offset + "px"
+        }
+        
+        for( let i = 0; i < filterLinks[0].offsetWidth; i++ ) {
+          filterStatus.style.width = i + 1 + "px"
+        }
+      }
+    </script>
   </head>
   
   <body class="phl">
@@ -47,11 +67,12 @@
 
     <main class="wrap site__content animate1" role="main">
       <nav>
-        <ul class="nav filter mbl">
-          <li><a class="plainLink activeLink" href="#">All</a></li>
-          <li><a class="plainLink" href="/about/">UX/UI</a></li>
-          <li><a class="plainLink" href="/about/">3D</a></li>
-          <li><a class="plainLink" href="/about/">Motion</a></li>
+        <ul class="nav filter mbl" id="filter">
+          <li><a class="plainLink" data-id="0">All</a></li>
+          <li><a class="plainLink" data-id="1">UX/UI</a></li>
+          <li><a class="plainLink" data-id="2">3D</a></li>
+          <li><a class="plainLink" data-id="3">Motion</a></li>
+          <hr id="filterStatus">
         </ul>
       </nav>
       
@@ -211,11 +232,11 @@
       <div>© 2018 Luka Schulz</div>
     </footer>
     
-    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
-        apiKey: "AIzaSyD7DGEVmzaYtci8Rg3e68EE7aX5y4ucvd4",
+        apiKey: "AIzaSyBEnqyTIg7sfUx88RRUTCzLmd12uwQU6EA",
         authDomain: "portfolio-lukaschulz.firebaseapp.com",
         databaseURL: "https://portfolio-lukaschulz.firebaseio.com",
         projectId: "portfolio-lukaschulz",

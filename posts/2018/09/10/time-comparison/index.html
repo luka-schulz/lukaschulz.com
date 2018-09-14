@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport"content="initial-scale=1">
+
+    <title>Future Possibilities | Luka Schulz</title>
+
+    <meta property="og:title" content="Future Possibilities"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Luka Schulz"/>
+    <meta property="og:url" content="http://lukaschulz.com/blog"/>
+    <meta property="og:description" content="This blog post contains 22 designers and design studios that interest Luka Schulz."/>
+    <meta property="og:image" content=""/>
+
+    <meta name="theme-color" content="#b4b4b4" />
+
+    <link href="../../../../../css/typography.css" rel="stylesheet" type="text/css">
+    <link href="../../../../../css/style.css" rel="stylesheet" type="text/css">
+
+    <link rel="shortcut icon" href="../../../../../yes-its-upsidedown.png">
+
+  </head>
+
+  <body class="phl">
+
+    <header class="wrap sans site__header"role="banner">
+      <a class="site__title b plainLink"href="../../../../../index.html">Luka Schulz</a>
+
+      <nav class="site__nav"role="navigation">
+        <ul class="nav">
+          <li><a class="plainLink"href="../../../../../blog.html">Blog</a></li>
+          <li><a class="plainLink"href="../../../../../about.html">About</a></li>
+        </ul>
+      </nav>
+
+    </header>
+
+    <main class="wrap site__content" role="main">
+      
+      <header class="page__header mbl">
+        <h1>Future Possibilities</h1>
+        <p class="post__date small">Thurs. August, 30 2018</p>
+      </header>
+
+      <article class="post__content">
+        <figure>
+          <div id="map"></div>
+        </figure>
+        
+        <p>In a presentation by CW&amp;T, the design couple talks about comparative <a href="https://www.youtube.com/watch?v=qnKpAI2isII&feature=youtu.be&t=27m20s" target="_blank">pie charts</a> in relation to their time usage. </p>
+      </article>
+
+    </main>
+
+    <footer class="wrap site__footer">
+      <div>© 2018 Luka Schulz</div>
+    </footer>
+
+  </body>
+
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 40.741895, lng: -73.989308},
+        zoom: 8
+      });
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEnqyTIg7sfUx88RRUTCzLmd12uwQU6EA&callback=initMap"
+          async defer></script>
+
+</html>

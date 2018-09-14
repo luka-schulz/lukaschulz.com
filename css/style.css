@@ -12,6 +12,7 @@
 
 img {
   max-width: 100%;
+  width: 100%;
   vertical-align: bottom;
 }
 
@@ -42,6 +43,8 @@ video {
   overflow: hidden;
   position: absolute;
 }
+
+
 
 
 
@@ -116,6 +119,10 @@ p + figure {
   background: black;
 }
 
+.lhr {
+  margin: 40px 0;
+}
+
 
 
 
@@ -187,8 +194,10 @@ p + blockquote {
 }
 
 blockquote {
+  color: #b4b4b4;
   border-left: 2px solid black;
   padding-left: 20px;
+  margin-bottom: 40px;
 }
 
 .pullout {
@@ -211,16 +220,13 @@ a {
   text-decoration-skip-ink: auto;
 }
 
-a:hover, a:focus {
+a:hover {
   color: #b4b4b4;
 }
 
 .plainLink {
   text-decoration: none;
-}
-
-.activeLink {
-  text-decoration: underline;
+  cursor: pointer;
 }
 
 .inactiveLink {
@@ -240,6 +246,21 @@ strong {
   font-style: italic;
 }
 
+h2 > span {
+  float: left;
+}
+
+h2 > .flip {
+  top: 4px;
+  float: left;
+  -webkit-transform:rotate(-180deg);
+  -moz-transform:rotate(-180deg);
+  -o-transform:rotate(-180deg);
+  transform:rotate(-180deg);
+  ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
+  filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+
 
 
 /* Home */
@@ -247,10 +268,21 @@ strong {
 .site__content nav {
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 
 .filter {
   display: inline-block;
+}
+
+#filterStatus {
+  margin-top: 5px;
+  height: 2px;
+  width: 0px;
+  left: -1px;
+  background: black;
+  border: none;
+  transition: .3s ease-in-out;
 }
 
 .grid {
@@ -290,7 +322,7 @@ strong {
   fill: #b4b4b4;
   stroke: #b4b4b4;
   stroke-linejoin: round;
-  transition: .2s ease;
+  transition: .1s ease-in-out;
 }
 
 .grid__caption:hover {
@@ -386,6 +418,12 @@ canvas {
 
 #creationOfAdam canvas {
   flex-shrink: 0;
+}
+
+/* Blog Posts */
+
+#map {
+  height: 720px;
 }
 
 
